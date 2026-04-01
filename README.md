@@ -87,8 +87,16 @@ The project focuses on **reliability, maintainability, clear structure, and prac
 ---
 
 ## 🚀 Setup
+### Prerequisites
 
-### 1. Clone and run the application
+- Git
+- Node.js 18+
+- npm
+- Yarn
+
+### 1. Clone and start the RWA application
+
+The Cypress Real World App (RWA) is an external dependency required by this automation project.
 
 ```bash
 git clone https://github.com/cypress-io/cypress-realworld-app .rwa
@@ -97,24 +105,28 @@ yarn install
 yarn dev
 ```
 
-The application will be available at:
+RWA will be available at:
 
 ```bash
 http://localhost:3000
 ```
 
-### 2. Clone and run the tests
+### 2. Clone and install the automation project
+
+This repository contains the Playwright automation that runs against the RWA application.
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone git@github.com:Milicerro/rwa-qa-automation.git
+cd <your-file>
 npm ci
 npx playwright install --with-deps
 ```
 
-Ensure the application is already running before executing the Playwright commands below.
+### 3. Run the test suites
 
-Run the test suites:
+The RWA application must be running before executing any Playwright tests from this repository.
+
+Run the individual suites as needed:
 
 ```bash
 npm run test:smoke
@@ -122,13 +134,15 @@ npm run test:api
 npm run test:ui
 ```
 
-Run the full challenge suite:
+Run the full suite:
 
 ```bash
 npm run ci
 ```
 
-View the HTML report:
+### 4. View the test report
+
+View the HTML report with:
 
 ```bash
 npm run report

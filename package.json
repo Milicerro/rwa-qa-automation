@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test:ui": "playwright test tests/ui --reporter=html",
+    "test:api": "playwright test tests/api --reporter=html",
+    "test:smoke": "playwright test tests/ui/smoke.spec.ts --reporter=html",
+    "report": "playwright show-report",
+    "ci": "npm run test:smoke && npm run test:api && npm run test:ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^25.5.0",
+    "dotenv": "^16.4.5",
+    "wait-on": "^7.2.0"
+  }
+}
